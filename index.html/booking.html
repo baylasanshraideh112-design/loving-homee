@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+<meta charset="UTF-8">
+<title>نموذج الحجز - Loving Homes</title>
+<link rel="stylesheet" href="../css/style10.css">
+</head>
+
+<body>
+
+<!-- شريط التحكم -->
+<div class="control-bar">
+
+<button id="toggle-mode">🌙</button>
+<button id="increase-font">A+</button>
+<button id="decrease-font">A-</button>
+<button id="read-text">🔊</button>
+
+</div>
+
+<header>
+
+<div class="logo">
+<img src="../images/ss.jfif" alt="شعار الموقع">
+</div>
+
+<h1 class="title">Loving Homes</h1>
+
+<nav>
+<a href="home.html">الصفحة الرئيسية</a>
+<a href="about.html">نبذة عنا</a>
+<a href="gallery.html">المعرض</a>
+<a href="health.html">الرعاية الصحية</a>
+<a href="products.html">منتجاتنا</a>
+<a href="offers.html">العروض</a>
+<a href="rooms.html">الغرف</a>
+<a href="services.html">الخدمات</a>
+<a href="training.html">التدريب</a>
+<a href="contact.html">اتصل بنا</a>
+<a href="booking.html">نموذج الحجز</a>
+</nav>
+
+</header>
+
+<section class="intro">
+
+<h2>نموذج حجز إقامة الكلب</h2>
+
+<p>
+يمكنك من خلال هذا النموذج حجز غرفة لكلبك في فندق Loving Homes بسهولة.
+يرجى تعبئة المعلومات التالية وسنقوم بالتواصل معك لتأكيد الحجز.
+</p>
+
+</section>
+
+<section class="booking-section">
+
+<form class="booking-form">
+
+<div class="form-group">
+<label>اسم صاحب الكلب</label>
+<input type="text" placeholder="اكتب اسمك">
+</div>
+
+<div class="form-group">
+<label>رقم الهاتف</label>
+<input type="tel" placeholder="07xxxxxxxx">
+</div>
+
+<div class="form-group">
+<label>اسم الكلب</label>
+<input type="text" placeholder="اسم الكلب">
+</div>
+
+<div class="form-group">
+<label>نوع الكلب</label>
+<input type="text" placeholder="مثال: جيرمن شيبرد">
+</div>
+
+<div class="form-group">
+<label>تاريخ الوصول</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>تاريخ المغادرة</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>نوع الغرفة</label>
+<select>
+<option>غرفة عادية</option>
+<option>غرفة فاخرة</option>
+<option>جناح VIP</option>
+<option>غرفة تدريب وإقامة</option>
+</select>
+</div>
+
+<div class="form-group full">
+<label>ملاحظات إضافية</label>
+<textarea placeholder="اكتب أي ملاحظات إضافية"></textarea>
+</div>
+
+<button class="book-btn">إرسال طلب الحجز</button>
+
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Loving Homes</p>
+</footer>
+
+<script>
+
+/* الوضع الليلي */
+
+document.getElementById("toggle-mode").onclick=function(){
+document.body.classList.toggle("dark-mode");
+};
+
+/* تكبير الخط */
+
+let fontSize=18;
+
+document.getElementById("increase-font").onclick=function(){
+fontSize+=2;
+document.body.style.fontSize=fontSize+"px";
+};
+
+/* تصغير الخط */
+
+document.getElementById("decrease-font").onclick=function(){
+fontSize-=2;
+document.body.style.fontSize=fontSize+"px";
+};
+
+/* قراءة النص */
+
+document.getElementById("read-text").onclick=function(){
+
+let text=document.querySelector(".intro").innerText;
+
+let speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="ar";
+
+speechSynthesis.speak(speech);
+
+};
+
+</script>
+
+</body>
+</html>
